@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:todo_app/widgets/dialog_box.dart';
 import 'package:todo_app/widgets/toDo_list.dart';
 import 'package:intl/intl.dart';
@@ -54,9 +55,19 @@ class _HomePageState extends State<HomePage> {
             selectDate: _selectDate,
             onSaved: () {
               setState(() {
+                if (_controller.text.isEmpty) {
+                  EasyLoading.showError('Task name is empty');
+                  return createNewTask();
+                }
+                if (_selectDate.text.isEmpty) {
+                  EasyLoading.showError('Deadline is empty');
+                  return createNewTask();
+                }
+
                 toDoList.add([_controller.text, checkDeadline(), _selectDate.text]);
                 _controller.clear();
                 _selectDate.clear();
+                EasyLoading.showSuccess('Task added successfully');
               });
               Navigator.pop(context);
             },

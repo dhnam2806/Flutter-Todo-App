@@ -22,11 +22,13 @@ class DialogBox extends StatelessWidget {
       content: SizedBox(
         height: 200,
         child:
-          Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
           TextField(
             controller: controller,
             decoration: const InputDecoration(
-                border: OutlineInputBorder(), hintText: "Add a new Task"),
+                icon: Icon(Icons.task),
+                border: OutlineInputBorder(),
+                hintText: "Add a new Task"),
           ),
           TextField(
             controller: selectDate,
@@ -35,7 +37,9 @@ class DialogBox extends StatelessWidget {
             },
             keyboardType: TextInputType.none,
             decoration: const InputDecoration(
-                border: OutlineInputBorder(), hintText: "Add a deadline"),
+                icon: Icon(Icons.calendar_today),
+                border: OutlineInputBorder(),
+                hintText: "Add a deadline"),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
