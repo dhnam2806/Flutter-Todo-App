@@ -55,7 +55,6 @@ class _HomePageState extends State<HomePage> {
             onSaved: () {
               setState(() {
                 toDoList.add([_controller.text, checkDeadline(), _selectDate.text]);
-                // checkDeadline();
                 _controller.clear();
                 _selectDate.clear();
               });
@@ -121,6 +120,7 @@ class _HomePageState extends State<HomePage> {
               onChanged: (value) {
                 setState(() {
                   toDoList[index][1] = !toDoList[index][1];
+                  
                 });
               },
               deleteTask: (context) {

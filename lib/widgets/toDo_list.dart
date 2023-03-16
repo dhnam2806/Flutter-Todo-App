@@ -20,7 +20,8 @@ class ToDoList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 16.0, bottom: 16),
+      padding:
+          const EdgeInsets.only(left: 20.0, right: 20.0, top: 16.0, bottom: 16),
       child: Slidable(
         endActionPane: ActionPane(
           motion: DrawerMotion(),
@@ -36,7 +37,7 @@ class ToDoList extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: Colors.blue[600],
+            color: isCheck ? Colors.red : Colors.blue[600],
             borderRadius: BorderRadius.circular(8),
           ),
           child: Row(
