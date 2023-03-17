@@ -24,17 +24,17 @@ class LandingPage extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 60.0,
-                            fontFamily: 'Rubik'
+                            fontFamily: 'RussoOne'
                           )),
                     ),
                     Container(
                         alignment: Alignment.bottomRight,
                         child: const Text(
-                          'Made by: Team 8',
+                          'Team 8',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 28,
-                            fontFamily: 'Rubik'
+                            fontSize: 24,
+                            fontFamily: 'RussoOne'
                           ),
                         )),
                   ]),

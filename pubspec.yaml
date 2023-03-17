@@ -82,6 +82,8 @@ flutter:
     - family: Rubik
       fonts:
         - asset: fonts/RubikIso-Regular.ttf
-
+    - family: RussoOne
+      fonts:
+        - asset: fonts/RussoOne-Regular.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

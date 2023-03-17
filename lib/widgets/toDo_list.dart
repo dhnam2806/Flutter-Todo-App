@@ -52,6 +52,7 @@ class ToDoList extends StatelessWidget {
                   taskName,
                   style: TextStyle(
                       fontSize: 16,
+                      color: isCheck ? Colors.black : Colors.white,
                       decoration: isCheck
                           ? TextDecoration.lineThrough
                           : TextDecoration.none),
@@ -61,6 +62,7 @@ class ToDoList extends StatelessWidget {
                 deadline!,
                 style: TextStyle(
                     fontSize: 16,
+                    color: isCheck ? Colors.black : Colors.white,
                     decoration: isCheck
                         ? TextDecoration.lineThrough
                         : TextDecoration.none),

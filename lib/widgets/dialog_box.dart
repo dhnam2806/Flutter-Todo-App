@@ -27,8 +27,10 @@ class DialogBox extends StatelessWidget {
             controller: controller,
             decoration: const InputDecoration(
                 icon: Icon(Icons.task),
-                border: OutlineInputBorder(),
-                hintText: "Add a new Task"),
+                border: UnderlineInputBorder(),
+                hintText: "Add a new Task"
+                // labelText: "Add a new Task"
+                ),
           ),
           TextField(
             controller: selectDate,
@@ -38,7 +40,7 @@ class DialogBox extends StatelessWidget {
             keyboardType: TextInputType.none,
             decoration: const InputDecoration(
                 icon: Icon(Icons.calendar_today),
-                border: OutlineInputBorder(),
+                border: UnderlineInputBorder(),
                 hintText: "Add a deadline"),
           ),
           Row(
