@@ -7,6 +7,7 @@ class ToDoList extends StatelessWidget {
   final String? deadline;
   Function(bool?)? onChanged;
   Function(BuildContext)? deleteTask;
+  Function(BuildContext)? editTask;
 
   ToDoList({
     super.key,
@@ -15,6 +16,7 @@ class ToDoList extends StatelessWidget {
     required this.deadline,
     required this.onChanged,
     required this.deleteTask,
+    required this.editTask,
   });
 
   @override
@@ -30,6 +32,17 @@ class ToDoList extends StatelessWidget {
               onPressed: deleteTask,
               icon: Icons.delete_forever,
               backgroundColor: Colors.red.shade600,
+              borderRadius: BorderRadius.circular(8),
+            )
+          ],
+        ),
+        startActionPane: ActionPane(
+          motion: DrawerMotion(),
+          children: [
+            SlidableAction(
+              onPressed: editTask,
+              icon: Icons.edit,
+              backgroundColor: Colors.yellow.shade600,
               borderRadius: BorderRadius.circular(8),
             )
           ],

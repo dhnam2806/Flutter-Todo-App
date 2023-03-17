@@ -91,6 +91,45 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+  void editTasks(index){
+    showDialog(
+        context: context,
+        builder: ((context) {
+          return DialogBox(
+            controller: _controller,
+            selectDate: _selectDate,
+            onSaved: () {
+              setState(() {
+                if (_controller.text.isEmpty) {
+                  EasyLoading.showError('Task name is empty');
+                  return createNewTask();
+                }
+                if (_selectDate.text.isEmpty) {
+                  EasyLoading.showError('Deadline is empty');
+                  return createNewTask();
+                }
+
+                toDoList[index][0] = _controller.text;
+                toDoList[index][1] = checkDeadline();
+                toDoList[index][2] = _selectDate.text;
+                _controller.clear();
+                _selectDate.clear();
+                EasyLoading.showSuccess('Task edited successfully');
+              });
+              Navigator.pop(context);
+            },
+            onCancel: () {
+              Navigator.pop(context);
+            },
+            datePicker: (() {
+              setState(() {
+                datePicker();
+              });
+            }),
+          );
+        }));
+  }
+
   @override
   void initState() {
     super.initState();
@@ -137,6 +176,15 @@ class _HomePageState extends State<HomePage> {
               deleteTask: (context) {
                 setState(() {
                   toDoList.removeAt(index);
+                });
+              },
+              editTask: (context) {
+                setState(() {
+                  _controller.text = toDoList[index][0];
+                  _selectDate.text = toDoList[index][2];
+                  editTasks(index);
+                  // createNewTask();
+                  // toDoList.removeAt(index);
                 });
               },
             );
