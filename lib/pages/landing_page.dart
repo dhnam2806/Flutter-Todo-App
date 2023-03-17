@@ -23,7 +23,8 @@ class LandingPage extends StatelessWidget {
                       child: const Text('TO DO APP',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 50.0,
+                            fontSize: 60.0,
+                            fontFamily: 'Rubik'
                           )),
                     ),
                     Container(
@@ -32,7 +33,8 @@ class LandingPage extends StatelessWidget {
                           'Made by: Team 8',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: 28,
+                            fontFamily: 'Rubik'
                           ),
                         )),
                   ]),
