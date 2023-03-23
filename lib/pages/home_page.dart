@@ -173,10 +173,40 @@ class _HomePageState extends State<HomePage> {
                   
                 });
               },
+              // deleteTask: (context) {
+              //   setState(() {
+              //     toDoList.removeAt(index);
+              //   });
+              // },
               deleteTask: (context) {
-                setState(() {
-                  toDoList.removeAt(index);
-                });
+                showDialog(
+                    context: context,
+                    builder: (BuildContext ctx) {
+                      return AlertDialog(
+                        title: const Text('Please Confirm'),
+                        content: const Text('Are you sure to remove the task?'),
+                        actions: [
+                          // The "Yes" button
+                          TextButton(
+                              onPressed: () {
+                                setState(() {
+                                  toDoList.removeAt(index);
+                                });
+                                // Close the dialog
+                                Navigator.pop(ctx);
+                                EasyLoading.showSuccess(
+                                    'Task deleted successfully');
+                              },
+                              child: const Text('Yes')),
+                          TextButton(
+                              onPressed: () {
+                                // Close the dialog
+                                Navigator.pop(ctx);
+                              },
+                              child: const Text('No'))
+                        ],
+                      );
+                    });
               },
               editTask: (context) {
                 setState(() {
