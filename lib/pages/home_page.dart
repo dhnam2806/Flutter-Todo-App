@@ -64,7 +64,8 @@ class _HomePageState extends State<HomePage> {
                   return createNewTask();
                 }
 
-                toDoList.add([_controller.text, checkDeadline(), _selectDate.text]);
+                toDoList
+                    .add([_controller.text, checkDeadline(), _selectDate.text]);
                 _controller.clear();
                 _selectDate.clear();
                 EasyLoading.showSuccess('Task added successfully');
@@ -91,7 +92,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  void editTasks(index){
+  void editTasks(index) {
     showDialog(
         context: context,
         builder: ((context) {
@@ -156,8 +157,12 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.blue[400],
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          title: const Center(child: Text('TO DO')),
-          elevation: 2,
+          title: const Center(
+              child: Text(
+            'TO DO',
+            style: TextStyle(fontSize: 22),
+          )),
+          elevation: 0,
         ),
         body: ListView.builder(
           controller: _scrollController,
@@ -170,14 +175,9 @@ class _HomePageState extends State<HomePage> {
               onChanged: (value) {
                 setState(() {
                   toDoList[index][1] = !toDoList[index][1];
-                  
                 });
               },
-              // deleteTask: (context) {
-              //   setState(() {
-              //     toDoList.removeAt(index);
-              //   });
-              // },
+
               deleteTask: (context) {
                 showDialog(
                     context: context,
@@ -213,8 +213,6 @@ class _HomePageState extends State<HomePage> {
                   _controller.text = toDoList[index][0];
                   _selectDate.text = toDoList[index][2];
                   editTasks(index);
-                  // createNewTask();
-                  // toDoList.removeAt(index);
                 });
               },
             );

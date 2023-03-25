@@ -23,7 +23,7 @@ class ToDoList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-          const EdgeInsets.only(left: 20.0, right: 20.0, top: 16.0, bottom: 16),
+          const EdgeInsets.only(left: 18.0, right: 18.0, top: 16.0, bottom: 16),
       child: Slidable(
         endActionPane: ActionPane(
           motion: DrawerMotion(),
@@ -64,7 +64,7 @@ class ToDoList extends StatelessWidget {
                 child: Text(
                   taskName,
                   style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 18,
                       color: isCheck ? Colors.black : Colors.white,
                       decoration: isCheck
                           ? TextDecoration.lineThrough
@@ -74,7 +74,7 @@ class ToDoList extends StatelessWidget {
               Text(
                 deadline!,
                 style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 18,
                     color: isCheck ? Colors.black : Colors.white,
                     decoration: isCheck
                         ? TextDecoration.lineThrough
